@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hao Yu (Longin Yu, 余 豪)</title>
+    <link rel="icon" type="image/png" href="assets/images/avatar.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body { 
+                font-family: 'Inter', sans-serif; 
+                @apply bg-[#fafafa] text-gray-800 leading-relaxed;
+            }
+        }
+
+        @layer components {
+            .section-title {
+                @apply text-2xl font-bold mb-8 border-b-2 border-gray-300 pb-2 inline-block text-gray-900;
+            }
+
+            .tag {
+                @apply px-2 py-0.5 text-xs font-semibold rounded-md mr-2;
+            }
+
+            /* 1. 修改：让卡片默认就有底色和边框，增强区分度 */
+            .pub-card {
+                @apply mb-6 bg-white rounded-2xl overflow-hidden transition-all border border-gray-200 shadow-sm hover:shadow-md hover:border-indigo-200;
+            }
+
+            /* 2. 修改：头图样式，保持宽度充满 */
+            .head-image {
+                @apply w-full h-32 object-cover border-b border-gray-100;
+            }
+
+            .side-layout {
+                /* items-stretch 确保左右两个容器高度在视觉上对齐 */
+                @apply flex flex-col-reverse md:flex-row items-stretch overflow-hidden;
+            }
+
+            .side-image {
+                /* 1. md:w-64: 保持宽度固定
+                2. md:h-0: 这是一个技巧，让图片在计算高度时不占空间，不撑开父容器
+                3. md:min-h-full: 让图片必须填满左侧文字撑起的高度
+                4. object-cover: 确保图片在缩放时保持比例，裁剪多余部分
+                */
+                @apply w-full h-48 md:h-0 md:min-h-full md:w-64 object-cover shrink-0;
+            }
+
+            .pub-content {
+                @apply p-6 flex-1 flex flex-col justify-center;
+            }
+
+            .link-btn {
+                @apply text-sm font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-1 transition-colors;
+            }
+
+            .me {
+                @apply text-gray-950 font-bold border-b-2 border-gray-400;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-16">
+        
+        <header class="flex flex-col-reverse md:flex-row items-center justify-between mb-16">
+            <div class="flex-1 mt-10 md:mt-0 md:pr-16 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight 
+                    flex flex-col items-center 
+                    md:flex-row md:items-baseline md:justify-start">
+                
+                <span>Hao Yu</span>
+
+                <span class="text-gray-500 text-sm md:text-base font-normal mt-1 md:mt-0 md:ml-3 tracking-normal">
+                    (Longin Yu, 余 豪)
+                </span>
+            </h1>
+
+            <div class="mb-8 text-center md:text-left">
+                <p class="text-xl text-gray-700 font-semibold mb-1">
+                    PhD Student in VLM & Agentic RL
+                </p>
+                <p class="text-lg text-indigo-600 font-medium opacity-90">
+                    Tsinghua University
+                </p>
+            </div>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-5 text-gray-500">
+                    <a href="mailto:longinyh@gmail.com" class="hover:text-gray-900 flex items-center gap-1.5 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i> Email</a>
+                    <a href="https://github.com/Longin-Yu" class="hover:text-gray-900 flex items-center gap-1.5 transition-colors"><i data-lucide="github" class="w-5 h-5"></i> GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=DnYC9yoAAAAJ&hl=en" class="hover:text-gray-900 flex items-center gap-1.5 transition-colors"><i data-lucide="graduation-cap" class="w-5 h-5"></i> Scholar</a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-3xl blur opacity-25"></div>
+                <img src="assets/images/avatar.png" alt="Profile" class="relative w-40 h-40 md:w-52 md:h-52 rounded-3xl object-cover shadow-xl border-4 border-white">
+            </div>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="section-title">About Me</h2>
+            <div class="text-gray-700 text-lg space-y-5">
+                My research focuses on the intersection of <b>Vision-Language Models (VLMs)</b> and <b>Generalist Agents</b>.
+                Beyond the lab, I find creative balance in music production and exploring the possibilities of digital audio workstations (DAWs).
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="section-title">Selected Publications</h2>
+            
+            <div id="publications-list"></div>
+        </section>
+
+        <footer class="pt-12 border-t border-gray-200 flex justify-between items-center text-gray-400 text-sm">
+            <p>&copy; 2025 Hao Yu. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // 1. 论文数据维护列表
+        const publications = [
+            {
+                title: "AgentBench: Evaluating LLMs as Agents",
+                venue: "ICLR 2024",
+                // 现在直接写整段字符串
+                authors: "Xiao Liu*, Hao Yu*, Hanchen Zhang*, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan Yang, Shudan Zhang, Xiang Deng, Aohan Zeng, Zhengxiao Du, Chenhui Zhang, Sheng Shen, Tianjun Zhang, Yu Su, Huan Sun, Minlie Huang, Yuxiao Dong, Jie Tang",
+                paperUrl: "https://arxiv.org/abs/2308.03688",
+                codeUrl: "https://github.com/THUDM/AgentBench",
+                image: "assets/images/agentbench-cover.jpg",
+                layout: "top"
+            },
+            {
+                title: "ComRoPE: Scalable and Robust Rotary Position Embedding Parameterized by Trainable Commuting Angle Matrices",
+                venue: "CVPR 2025",
+                authors: "Hao Yu, Tangyu Jiang, Shuning Jia, Shannan Yan, Shunning Liu, Haolong Qian, Guanghao Li, Shuting Dong, Huaisong Zhang, Chun Yuan",
+                paperUrl: "https://arxiv.org/abs/2506.03737",
+                codeUrl: "https://github.com/Longin-Yu/ComRoPE",
+                image: "assets/images/comrope.png",
+                layout: "side"
+            },
+            {
+                title: "OmniAlpha: A Sequence-to-Sequence Framework for Unified Multi-Task RGBA Generation",
+                venue: "arXiv",
+                authors: "Hao Yu*, Jiabo Zhan*, Zile Wang*, Jinglin Wang, Huaisong Zhang, Hongyu Li, Xinrui Chen, Yongxian Wei, Chun Yuan",
+                paperUrl: "https://arxiv.org/abs/2511.20211",
+                codeUrl: "https://github.com/Longin-Yu/OmniAlpha",
+                image: "assets/images/omnialpha.png",
+                layout: "side"
+            },
+            {
+                title: "AlphaVAE: Unified End-to-End RGBA Image Reconstruction and Generation with Alpha-Aware Representation Learning",
+                venue: "arXiv",
+                authors: "Zile Wang*, Hao Yu*, Jiabo Zhan, Chun Yuan",
+                paperUrl: "https://arxiv.org/abs/2507.09308",
+                codeUrl: "https://github.com/o0o0o00o0/AlphaVAE",
+                image: "assets/images/alphavae.png",
+                layout: "side"
+            },
+            {
+                title: "WebGLM: Towards An Efficient Web-Enhanced Question Answering System with Human Preferences",
+                venue: "SIGKDD 2023",
+                authors: "Xiao Liu*, Hanyu Lai*, Hao Yu*, Yifan Xu, Aohan Zeng, Zhengxiao Du, Peng Zhang, Yuxiao Dong, Jie Tang",
+                paperUrl: "https://arxiv.org/abs/2306.07906",
+                codeUrl: "https://github.com/THUDM/WebGLM",
+                image: "assets/images/webglm.png",
+                layout: "top"
+            },
+            {
+                title: "VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents",
+                venue: "ICLR 2025",
+                authors: "Xiao Liu, Tianjie Zhang, Yu Gu, Iat Long Iong, Yifan Xu, Xixuan Song, Shudan Zhang, Hanyu Lai, Xinyi Liu, Hanlin Zhao, Jiadai Sun, Xinyue Yang, Yu Yang, Zehan Qi, Shuntian Yao, Xueqiao Sun, Siyi Cheng, Qinkai Zheng, Hao Yu, Hanchen Zhang, Wenyi Hong, Ming Ding, Lihang Pan, Xiaotao Gu, Aohan Zeng, Zhengxiao Du, Chan Hee Song, Yu Su, Yuxiao Dong, Jie Tang",
+                paperUrl: "https://arxiv.org/abs/2408.06327",
+                codeUrl: "https://github.com/THUDM/VisualAgentBench",
+                // image: "assets/images/webglm.png",
+                layout: "side"
+            },
+            {
+                title: "AutoWebGLM: A Large Language Model-based Web Navigating Agent",
+                venue: "SIGKDD 2024",
+                authors: "Hanyu Lai*, Xiao Liu*, Iat Long Iong*, Shuntian Yao, Yuxuan Chen, Pengbo Shen, Hao Yu, Hanchen Zhang, Xiaohan Zhang, Yuxiao Dong, Jie Tang",
+                paperUrl: "https://arxiv.org/abs/2404.03648",
+                codeUrl: "https://github.com/THUDM/AutoWebGLM",
+                // image: "assets/images/webglm.png",
+                layout: "side"
+            },
+            {
+                title: "OpenWebAgent: An Open Toolkit to Enable Web Agents on Large Language Models",
+                venue: "ACL 2024",
+                authors: "Iat Long Iong, Xiao Liu, Yuxuan Chen, Hanyu Lai, Shuntian Yao, Pengbo Shen, Hao Yu, Yuxiao Dong, Jie Tang",
+                paperUrl: "https://arxiv.org/abs/2404.03648",
+                codeUrl: "https://github.com/THUDM/OpenWebAgent",
+                // image: "assets/images/webglm.png",
+                layout: "side"
+            },
+        ];
+
+        function renderPublications() {
+            const container = document.getElementById('publications-list');
+            
+            container.innerHTML = publications.map(pub => {
+                const isSide = pub.layout === 'side';
+                
+                // 1. 处理作者高亮
+                const highlightedAuthors = pub.authors.replace(
+                    /Hao\sYu(\*?)/g, 
+                    `<b class="me text-gray-900 font-bold border-b-2 border-indigo-500/50 pb-px">Hao Yu$1</b>`
+                );
+
+                // 2. 预定义图片 HTML 片段
+                // 根据布局选择不同的 Class：top 布局用 head-image，side 布局用强制缩放的类
+                const imageHtml = pub.image ? `
+                    <div class="${isSide ? 'md:w-64 shrink-0 overflow-hidden bg-gray-50 flex items-center justify-center' : ''}">
+                        <img src="${pub.image}" 
+                            class="${isSide ? 'w-full h-48 md:h-0 md:min-h-full object-cover' : 'head-image'}" 
+                            alt="${pub.title}">
+                    </div>
+                `: "";
+
+                // 3. 组合最终模板 (解耦后的结构)
+                return `
+                    <div class="pub-card ${isSide ? 'side-layout' : ''}">
+                        ${!isSide ? imageHtml : ''}
+
+                        <div class="pub-content">
+                            <div class="flex justify-between items-start gap-3 mb-2">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-tight">${pub.title}</h3>
+                                <span class="tag bg-blue-50 text-blue-600 uppercase shrink-0 mt-1">${pub.venue}</span>
+                            </div>
+                            <p class="text-gray-500 mb-4 text-xs md:text-sm leading-relaxed">${highlightedAuthors}</p>
+                            <div class="flex gap-4">
+                                <a href="${pub.paperUrl}" class="link-btn"><i data-lucide="file-text" class="w-4 h-4"></i> Paper</a>
+                                <a href="${pub.codeUrl}" class="link-btn"><i data-lucide="code" class="w-4 h-4"></i> Code</a>
+                            </div>
+                        </div>
+
+                        ${isSide ? imageHtml : ''}
+                    </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // 页面加载完成后执行渲染
+        document.addEventListener('DOMContentLoaded', renderPublications);
+    </script>
+</body>
+</html>

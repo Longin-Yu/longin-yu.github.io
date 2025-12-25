@@ -112,6 +112,12 @@
             </div>
         </section>
 
+        <!-- <section class="mb-16">
+            <h2 class="section-title">Projects</h2>
+
+            <div id="projects-list"></div>
+        </section> -->
+
         <section class="mb-16">
             <h2 class="section-title">Selected Publications</h2>
             
@@ -125,8 +131,84 @@
     </div>
 
     <script>
+
+        function renderItems(div_id, items) {
+            const container = document.getElementById(div_id);
+            
+            container.innerHTML = items.map(pub => {
+                const isSide = pub.layout === 'side';
+                
+                // 1. 处理作者高亮
+                const highlightedAuthors = pub.authors.replace(
+                    /Hao\sYu(\*?)/g, 
+                    `<b class="me text-gray-900 font-bold border-b-2 border-indigo-500/50 pb-px">Hao Yu$1</b>`
+                );
+
+                // 2. 预定义图片 HTML 片段
+                // 根据布局选择不同的 Class：top 布局用 head-image，side 布局用强制缩放的类
+                const imageHtml = pub.image ? `
+                    <div class="${isSide ? 'md:w-64 shrink-0 overflow-hidden bg-gray-50 flex items-center justify-center' : ''}">
+                        <img src="${pub.image}" 
+                            class="${isSide ? 'w-full h-48 md:h-0 md:min-h-full object-cover' : 'head-image'}" 
+                            alt="${pub.title}">
+                    </div>
+                `: "";
+
+                // 3. 组合最终模板 (解耦后的结构)
+                return `
+                    <div class="pub-card ${isSide ? 'side-layout' : ''}">
+                        ${!isSide ? imageHtml : ''}
+
+                        <div class="pub-content">
+                            <div class="flex justify-between items-start gap-3 mb-2">
+                                <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-tight">${pub.title}</h3>
+                                <span class="tag bg-blue-50 text-blue-600 shrink-0 mt-1">${pub.venue}</span>
+                            </div>
+                            <p class="text-gray-500 mb-4 text-xs md:text-sm leading-relaxed">${highlightedAuthors}</p>
+                            <div class="flex gap-4">
+                                <a href="${pub.paperUrl}" class="link-btn"><i data-lucide="file-text" class="w-4 h-4"></i> Paper</a>
+                                <a href="${pub.codeUrl}" class="link-btn"><i data-lucide="code" class="w-4 h-4"></i> Code</a>
+                            </div>
+                        </div>
+
+                        ${isSide ? imageHtml : ''}
+                    </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+
         // 1. 论文数据维护列表
         const publications = [
+            {
+                title: "Seed1.8 Model Card: Towards Generalized Real-World Agency",
+                venue: "Technical Report",
+                authors: "ByteDance Seed",
+                paperUrl: "https://github.com/ByteDance-Seed/Seed-1.8/blob/main/Seed-1.8-Modelcard.pdf4",
+                codeUrl: "https://github.com/ByteDance-Seed/Seed-1.8",
+                // image: "assets/images/seed.png",
+                layout: "top"
+            },
+            {
+                title: "UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning",
+                venue: "Technical Report",
+                authors: "ByteDance Seed",
+                paperUrl: "https://arxiv.org/pdf/2509.02544",
+                codeUrl: "https://github.com/bytedance/UI-TARS",
+                image: "assets/images/uitars-2.png",
+                layout: "top"
+            },
+            {
+                title: "ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools",
+                venue: "Technical Report",
+                authors: "Team GLM",
+                paperUrl: "https://arxiv.org/pdf/2406.12793",
+                codeUrl: "https://github.com/THUDM",
+                image: "assets/images/glm-4.png",
+                layout: "top"
+            },
             {
                 title: "AgentBench: Evaluating LLMs as Agents",
                 venue: "ICLR 2024",
@@ -211,55 +293,39 @@
             },
         ];
 
-        function renderPublications() {
-            const container = document.getElementById('publications-list');
-            
-            container.innerHTML = publications.map(pub => {
-                const isSide = pub.layout === 'side';
-                
-                // 1. 处理作者高亮
-                const highlightedAuthors = pub.authors.replace(
-                    /Hao\sYu(\*?)/g, 
-                    `<b class="me text-gray-900 font-bold border-b-2 border-indigo-500/50 pb-px">Hao Yu$1</b>`
-                );
-
-                // 2. 预定义图片 HTML 片段
-                // 根据布局选择不同的 Class：top 布局用 head-image，side 布局用强制缩放的类
-                const imageHtml = pub.image ? `
-                    <div class="${isSide ? 'md:w-64 shrink-0 overflow-hidden bg-gray-50 flex items-center justify-center' : ''}">
-                        <img src="${pub.image}" 
-                            class="${isSide ? 'w-full h-48 md:h-0 md:min-h-full object-cover' : 'head-image'}" 
-                            alt="${pub.title}">
-                    </div>
-                `: "";
-
-                // 3. 组合最终模板 (解耦后的结构)
-                return `
-                    <div class="pub-card ${isSide ? 'side-layout' : ''}">
-                        ${!isSide ? imageHtml : ''}
-
-                        <div class="pub-content">
-                            <div class="flex justify-between items-start gap-3 mb-2">
-                                <h3 class="text-lg md:text-xl font-bold text-gray-900 leading-tight">${pub.title}</h3>
-                                <span class="tag bg-blue-50 text-blue-600 shrink-0 mt-1">${pub.venue}</span>
-                            </div>
-                            <p class="text-gray-500 mb-4 text-xs md:text-sm leading-relaxed">${highlightedAuthors}</p>
-                            <div class="flex gap-4">
-                                <a href="${pub.paperUrl}" class="link-btn"><i data-lucide="file-text" class="w-4 h-4"></i> Paper</a>
-                                <a href="${pub.codeUrl}" class="link-btn"><i data-lucide="code" class="w-4 h-4"></i> Code</a>
-                            </div>
-                        </div>
-
-                        ${isSide ? imageHtml : ''}
-                    </div>
-                `;
-            }).join('');
-
-            lucide.createIcons();
-        }
+        // const projects = [
+        //     {
+        //         title: "UI-TARS-2",
+        //         venue: "Seed",
+        //         authors: "ByteDance Seed",
+        //         paperUrl: "https://arxiv.org/pdf/2509.02544",
+        //         codeUrl: "https://github.com/bytedance/UI-TARS",
+        //         image: "https://seed-tars.com/static/image/icon.3c1c12ab.png",
+        //         layout: "side"
+        //     },
+        //     {
+        //         title: "ComRoPE: Scalable and Robust Rotary Position Embedding Parameterized by Trainable Commuting Angle Matrices",
+        //         venue: "CVPR 2025",
+        //         authors: "Hao Yu, Tangyu Jiang, Shuning Jia, Shannan Yan, Shunning Liu, Haolong Qian, Guanghao Li, Shuting Dong, Huaisong Zhang, Chun Yuan",
+        //         paperUrl: "https://arxiv.org/abs/2506.03737",
+        //         codeUrl: "https://github.com/Longin-Yu/ComRoPE",
+        //         image: "assets/images/comrope.png",
+        //         layout: "side"
+        //     },
+        //     {
+        //         title: "OmniAlpha: A Sequence-to-Sequence Framework for Unified Multi-Task RGBA Generation",
+        //         venue: "arXiv",
+        //         authors: "Hao Yu*, Jiabo Zhan*, Zile Wang*, Jinglin Wang, Huaisong Zhang, Hongyu Li, Xinrui Chen, Yongxian Wei, Chun Yuan",
+        //         paperUrl: "https://arxiv.org/abs/2511.20211",
+        //         codeUrl: "https://github.com/Longin-Yu/OmniAlpha",
+        //         image: "assets/images/omnialpha.png",
+        //         layout: "side"
+        //     }
+        // ];
 
         // 页面加载完成后执行渲染
-        document.addEventListener('DOMContentLoaded', renderPublications);
+        document.addEventListener('DOMContentLoaded', renderItems.bind(null, 'publications-list', publications));
+        // document.addEventListener('DOMContentLoaded', renderItems.bind(null, 'projects-list', projects));
     </script>
 </body>
 </html>

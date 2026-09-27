@@ -36,6 +36,8 @@ section, .publication { scroll-margin-top: 1em; }
   .badge { z-index: 1; }
 }
 .publication-list { padding-left: 1.2em; }
+.news-list li:has(.news-oral) { font-weight: 700; }
+.news-oral { color: #c62828; }
 .publication-list-item { margin-bottom: 1.1em; line-height: 1.6; }
 .publication-title { font-weight: 600; }
 .publication-links { display: flex; flex-wrap: wrap; gap: .25em 1em; margin: .35em 0; font-weight: 700; }

@@ -1,25 +1,5 @@
 [
   {
-    "id": "geoperceive",
-    "title": "Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning",
-    "venue": "ICLR 2026",
-    "authors": "Hao Yu, Shuning Jia, Guanghao Li, Wenhao Jiang, Chun Yuan",
-    "paperUrl": "https://arxiv.org/abs/2602.22703",
-    "codeUrl": "https://github.com/Longin-Yu/GeoPerceive",
-    "image": "assets/images/geoperceive.png",
-    "name": "GeoPerceive",
-    "topic": "Geometric perception",
-    "description": "Isolates geometric perception from reasoning, then improves diagram understanding with translator-guided reinforcement learning.",
-    "imageAlt": "GeoPerceive and GeoDPO pipelines for generating geometric data, training the translator, and optimizing the vision-language model.",
-    "imageWidth": 1847,
-    "imageHeight": 760,
-    "imageCaption": "Geometry to language",
-    "section": "publications",
-    "bibtex": "@misc{geoperceive26,\n  title = {{Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning}},\n  author = {Hao Yu and Shuning Jia and Guanghao Li and Wenhao Jiang and Chun Yuan},\n  year = {2026},\n  eprint = {2602.22703},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2602.22703}\n}",
-    "featured": true,
-    "scholarId": "DnYC9yoAAAAJ:4TOpqqG69KYC"
-  },
-  {
     "id": "omnialpha",
     "title": "OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning",
     "venue": "ACM MM 2026 (Oral)",
@@ -58,6 +38,26 @@
     "bibtex": "@misc{agentbench23,\n  title = {{AgentBench: Evaluating LLMs as Agents}},\n  author = {Xiao Liu and Hao Yu and Hanchen Zhang and Yifan Xu and Xuanyu Lei and Hanyu Lai and Yu Gu and Hangliang Ding and Kaiwen Men and Kejuan Yang and Shudan Zhang and Xiang Deng and Aohan Zeng and Zhengxiao Du and Chenhui Zhang and Sheng Shen and Tianjun Zhang and Yu Su and Huan Sun and Minlie Huang and Yuxiao Dong and Jie Tang},\n  year = {2023},\n  eprint = {2308.03688},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2308.03688}\n}",
     "featured": true,
     "scholarId": "DnYC9yoAAAAJ:u-x6o8ySG0sC"
+  },
+  {
+    "id": "geoperceive",
+    "title": "Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning",
+    "venue": "ICLR 2026",
+    "authors": "Hao Yu, Shuning Jia, Guanghao Li, Wenhao Jiang, Chun Yuan",
+    "paperUrl": "https://arxiv.org/abs/2602.22703",
+    "codeUrl": "https://github.com/Longin-Yu/GeoPerceive",
+    "image": "assets/images/geoperceive.png",
+    "name": "GeoPerceive",
+    "topic": "Geometric perception",
+    "description": "Isolates geometric perception from reasoning, then improves diagram understanding with translator-guided reinforcement learning.",
+    "imageAlt": "GeoPerceive and GeoDPO pipelines for generating geometric data, training the translator, and optimizing the vision-language model.",
+    "imageWidth": 1847,
+    "imageHeight": 760,
+    "imageCaption": "Geometry to language",
+    "section": "publications",
+    "bibtex": "@misc{geoperceive26,\n  title = {{Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning}},\n  author = {Hao Yu and Shuning Jia and Guanghao Li and Wenhao Jiang and Chun Yuan},\n  year = {2026},\n  eprint = {2602.22703},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2602.22703}\n}",
+    "featured": true,
+    "scholarId": "DnYC9yoAAAAJ:4TOpqqG69KYC"
   },
   {
     "id": "comrope",

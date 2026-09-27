@@ -1,0 +1,64 @@
+title: "Hao Yu (Longin Yu, 余豪) | Tsinghua University"
+description: "Hao Yu, PhD student at Tsinghua University. Research in vision-language models, generalist agents, and image generation."
+url: "https://longin-yu.github.io"
+baseurl: ""
+repository: "Longin-Yu/longin-yu.github.io"
+lang: en
+timezone: Asia/Shanghai
+
+author:
+  name: "Hao Yu"
+  alternate_name: "Longin Yu"
+  chinese_name: "余豪"
+  avatar: "/assets/images/avatar.png"
+  bio: "PhD Student"
+  employer: "Tsinghua University"
+  email: "longinyh@gmail.com"
+  github: "Longin-Yu"
+  googlescholar: "https://scholar.google.com/citations?user=DnYC9yoAAAAJ&hl=en"
+
+# Optional integrations stay off until deliberately configured.
+google_scholar_stats_enabled: false
+google_scholar_stats_use_cdn: true
+google_analytics_id: ""
+
+include:
+  - _pages
+exclude:
+  - docs
+  - google_scholar_crawler
+  - scripts
+  - local_*
+  - local_env.sh
+  - local_jekyll.pid
+  - local_jekyll.log
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - run_server.sh
+  - assets/js
+  - assets/fonts/README.md
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-sitemap
+  - jekyll-redirect-from

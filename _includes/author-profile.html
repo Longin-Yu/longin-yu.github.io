@@ -1,0 +1,15 @@
+<div class="profile_box">
+  <div class="author__avatar">
+    <img src="{{ site.author.avatar | relative_url }}" width="175" height="175" alt="{{ site.author.name | escape }}" fetchpriority="high">
+  </div>
+  <div class="author__content">
+    <h2 class="author__name">{{ site.author.name | escape }}</h2>
+    <p class="author__alternate">{{ site.author.alternate_name | escape }} · <span lang="zh">{{ site.author.chinese_name | escape }}</span></p>
+    <p class="author__bio">{{ site.author.bio | escape }}<br>{{ site.author.employer | escape }}</p>
+  </div>
+  <nav class="profile-links" aria-label="Contact and profiles">
+    <a href="mailto:{{ site.author.email | escape }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+    <a href="{{ site.author.googlescholar | escape }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+    <a href="https://github.com/{{ site.author.github | escape }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+  </nav>
+</div>

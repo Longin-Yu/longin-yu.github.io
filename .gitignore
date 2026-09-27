@@ -1,0 +1,8 @@
+local_*
+_site/
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+/vendor/
+.DS_Store

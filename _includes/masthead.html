@@ -1,0 +1,12 @@
+<header class="masthead">
+  <div class="masthead__inner-wrap">
+    <nav class="homepage-nav" aria-label="Page sections">
+      <a class="homepage-name" href="#top">Hao Yu</a>
+      <ul>
+        {% for link in site.data.navigation.main %}
+        <li><a href="{{ link.url | escape }}">{{ link.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

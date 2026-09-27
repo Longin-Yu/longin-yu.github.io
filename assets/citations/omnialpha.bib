@@ -1,0 +1,7 @@
+---
+layout: null
+publication_id: omnialpha
+sitemap: false
+---
+{%- assign publication = site.data.publications | where: "id", page.publication_id | first -%}
+{{ publication.bibtex }}

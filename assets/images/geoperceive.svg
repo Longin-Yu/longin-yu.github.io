@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220">
+  <title>From a geometric diagram to a structured description</title>
+  <rect width="360" height="220" fill="#fff"/>
+  <g fill="none" stroke-width="2.5">
+    <circle cx="83" cy="96" r="62" stroke="#8bafa2"/>
+    <path d="M83 34 29.3 127 136.7 127Z" stroke="#567c96"/>
+    <path d="M83 34V127" stroke="#b7c4cd" stroke-dasharray="5 5"/>
+    <path d="M83 116H94V127" stroke="#b7c4cd"/>
+    <path d="M163 98H190M183 91 190 98 183 105" stroke="#71847e"/>
+  </g>
+  <g fill="#567c96">
+    <circle cx="83" cy="34" r="4"/><circle cx="29.3" cy="127" r="4"/><circle cx="136.7" cy="127" r="4"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="19" fill="#425a66">
+    <text x="78" y="23">A</text><text x="13" y="148">B</text><text x="141" y="148">C</text>
+  </g>
+  <rect x="205" y="29" width="143" height="137" rx="5" fill="#f1f6f3" stroke="#d5e1db"/>
+  <g font-family="Arial, sans-serif" fill="#35685e">
+    <text x="222" y="59" font-size="22" font-weight="bold">GeoDSL</text>
+    <g font-size="19"><text x="222" y="91">points</text><text x="222" y="119">lines</text><text x="222" y="147">relations</text></g>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#606d73" text-anchor="middle">
+    <text x="83" y="197">Diagram</text><text x="276" y="197">Description</text>
+  </g>
+</svg>

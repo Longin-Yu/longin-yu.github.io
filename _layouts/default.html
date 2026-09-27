@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include masthead.html %}
+    <div id="main">
+      {% include sidebar.html %}
+      <main id="main-content" class="page">
+        <div class="page__inner-wrap">
+          <div class="page__content">{{ content }}</div>
+          <footer class="site-footer">
+            <p>© {{ site.time | date: '%Y' }} {{ site.author.name | escape }} · <a href="https://github.com/RayeRen/acad-homepage.github.io">Acad Homepage</a></p>
+            <a href="#top">Back to top ↑</a>
+          </footer>
+        </div>
+      </main>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

@@ -41,6 +41,8 @@ section, .publication { scroll-margin-top: 1em; }
 .publication-list-item { margin-bottom: 1.1em; line-height: 1.6; }
 .publication-title { font-weight: 600; }
 .publication-links { display: flex; flex-wrap: wrap; gap: .25em 1em; margin: .35em 0; font-weight: 700; }
+.publication-list-item .publication-links { display: inline; margin: 0; }
+.publication-list-item .publication-links a { margin-left: .6em; white-space: nowrap; }
 .scholar-summary { line-height: 1.9; }
 .scholar-badge {
   display: inline-flex; align-items: stretch; vertical-align: middle; margin: 0 .3em;

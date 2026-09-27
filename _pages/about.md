@@ -7,9 +7,8 @@ redirect_from:
 
 <section id="about-me" aria-label="About Me">
   <h1 class="visually-hidden">About Me</h1>
-  <p>I'm a PhD student at Tsinghua University, working on <strong>vision-language models</strong>, <strong>generalist agents</strong>, and <strong>image generation</strong>. My research includes geometric perception, the evaluation of language agents, and image synthesis with transparency.</p>
-  <p>Across these directions, I study how models interpret geometric diagrams, how agents reason and act in interactive environments, and how image generators represent opacity and compose multiple layers. I also explore learnable positional representations for visual models, with a focus on flexibility and generalization across different image resolutions and positional shifts.</p>
-  {% include scholar-summary.html %}
+  <p>I'm a PhD student at Tsinghua University, working on <strong>vision-language models</strong>, <strong>generalist agents</strong>, and <strong>image generation</strong>. {% include scholar-summary.html %}</p>
+  <!-- <p>Across these directions, I study how models interpret geometric diagrams, how agents reason and act in interactive environments, and how image generators represent opacity and compose multiple layers. I also explore learnable positional representations for visual models, with a focus on flexibility and generalization across different image resolutions and positional shifts.</p> -->
 </section>
 
 <section id="news" aria-labelledby="news-heading">
@@ -26,7 +25,6 @@ redirect_from:
 <section id="publications" aria-labelledby="publications-heading">
   <span id="research" class="legacy-anchor" aria-hidden="true"></span>
   <h2 class="section-title" id="publications-heading">📝 Publications</h2>
-  <p class="contribution-note">* Equal contribution</p>
   {% assign publications = site.data.publications | where: "section", "publications" %}
   {% for publication in publications %}{% if publication.featured %}{% include publication.html publication=publication %}{% endif %}{% endfor %}
   <ul class="publication-list">

@@ -3,10 +3,4 @@
   <a href="{{ paper.paperUrl | escape }}">Paper</a>
   {% if paper.codeUrl %}<a href="{{ paper.codeUrl | escape }}">Code</a>{% endif %}
   {% if paper.projectUrl %}<a href="{{ paper.projectUrl | escape }}">Project</a>{% endif %}
-  {% if site.google_scholar_stats_enabled and paper.scholarId %}
-    {% assign scholar_paper = site.data.scholar.publications[paper.scholarId] %}
-    <a class="paper-citations" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user={{ site.google_scholar_id | escape }}&amp;citation_for_view={{ paper.scholarId | escape }}">
-      Citations: <span class="show_paper_citations" data-scholar-id="{{ paper.scholarId | escape }}">{{ scholar_paper.num_citations | default: '—' }}</span>
-    </a>
-  {% endif %}
 </div>

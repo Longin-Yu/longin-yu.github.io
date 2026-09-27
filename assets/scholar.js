@@ -18,12 +18,6 @@
           !Number.isFinite(updated) || updated < snapshotTime) return;
       const total = document.getElementById('total_cit');
       if (total) total.textContent = data.citedby.toLocaleString('en-US');
-      document.querySelectorAll('.show_paper_citations').forEach(element => {
-        const paper = (data.publications || {})[element.dataset.scholarId];
-        if (paper && count(paper.num_citations)) {
-          element.textContent = paper.num_citations.toLocaleString('en-US');
-        }
-      });
       const date = document.getElementById('scholar-updated');
       if (date) {
         date.dateTime = data.updated;

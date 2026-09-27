@@ -19,7 +19,7 @@
 
 页面沿用模板原有侧栏、字号、论文大图和会议角标，栏目为 News、Publications、Technical Reports、Internship。论文数据的 `section` 分别为 `publications`、`reports`；`featured: true` 的论文在 Publications 前半部使用图文排版，其余论文和报告使用紧凑列表。各组内按 JSON 顺序展示。作者列表保留原始顺序，`Hao Yu` 自动加粗，`*` 显示为共同贡献标记。团队项目只展示标题、署名、发表信息和资源链接，不填写个人职责。
 
-图文论文可包含 `image`、`imageFull`、`imageAlt`、`imageWidth`、`imageHeight` 和 `description`。`scholarId` 是 Google Scholar 论文详情页中 `citation_for_view` 的完整值，用于准确匹配每篇引用数。本地资源路径相对仓库根目录，如 `assets/images/comrope.png`。请让 `id` 唯一，已发布条目尽量保留原 ID，避免原有锚点失效。
+图文论文可包含 `image`、`imageAlt`、`imageWidth`、`imageHeight` 和 `description`。论文配图仅作预览，不提供图片跳转；GeoPerceive 直接使用原始流程图。`scholarId` 保留 Scholar 条目映射，页面仅显示总引用数。本地资源路径相对仓库根目录，如 `assets/images/comrope.png`。请让 `id` 唯一，已发布条目尽量保留原 ID，避免原有锚点失效。
 
 BibTeX 的正文只维护 JSON 中的 `bibtex`。Jekyll 自动将它用于页面和 `assets/citations/*.bib` 下载。为新论文增加下载时，新建同名 `.bib` 文件，复制已有文件的模板，仅修改 front matter 的 `publication_id`，使其对应论文 ID。
 
@@ -56,7 +56,7 @@ git diff --check
 
 ## Google Scholar 引用统计
 
-已启用总引用徽章与逐篇引用数。`_config.yml` 中的 `google_scholar_id` 为 `DnYC9yoAAAAJ`。首次成功获取的数据保存于 `_data/scholar.json`，构建时直接渲染，所以禁用 JavaScript 或统计服务不可用时仍有真实数据。日期标明快照的更新时间。引用徽章沿用上游的浅灰／浅蓝样式，避免首发时依赖尚未建立的远端统计分支。
+总引用徽章位于个人介绍第一段，不显示逐篇引用数。`_config.yml` 中的 `google_scholar_id` 为 `DnYC9yoAAAAJ`。首次成功获取的数据保存于 `_data/scholar.json`，构建时直接渲染，所以禁用 JavaScript 或统计服务不可用时仍有真实数据。日期标明快照的更新时间。引用徽章沿用上游的浅灰／浅蓝样式，避免首发时依赖尚未建立的远端统计分支。
 
 `.github/workflows/google_scholar_crawler.yml` 准备了每日抓取（08:17 UTC）和手动运行；首次推送此工作流到 main 时也会触发。成功后只向独立的 `google-scholar-stats` 分支提交两份 JSON，不改 main。页面在正式域名下读取该分支的 CDN 数据，仅接纳同一 Scholar 用户且不早于本地快照的数据；本地 5500 预览读取本地快照。本次仅配置工作流，没有执行任何 push 或远端 Actions。
 

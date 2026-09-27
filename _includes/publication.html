@@ -4,9 +4,7 @@
   <div class="paper-box-image">
     <div class="paper-figure">
       <div class="badge venue">{{ pub.venue | escape }}</div>
-      <a href="{{ pub.imageFull | default: pub.image | relative_url }}" aria-label="View full figure for {{ pub.name | escape }}">
-        <img src="{{ pub.image | relative_url }}" width="{{ pub.imageWidth }}" height="{{ pub.imageHeight }}" alt="{{ pub.imageAlt | escape }}" loading="lazy" decoding="async">
-      </a>
+      <img src="{{ pub.image | relative_url }}" width="{{ pub.imageWidth }}" height="{{ pub.imageHeight }}" alt="{{ pub.imageAlt | escape }}" loading="lazy" decoding="async">
     </div>
   </div>
   <div class="paper-box-text">

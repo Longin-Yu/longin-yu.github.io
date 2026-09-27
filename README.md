@@ -43,24 +43,23 @@ git diff --check
 
 生成的 `_site/` 不提交。VS Code Live Server 无法直接编译 Jekyll：如继续使用 Live Server，必须让它服务 `_site/`，并同时运行 `bundle exec jekyll build --watch`。不能直接打开源码中的 Liquid 模板来验收页面。
 
-当前迁移预览在远端 5500 端口，兼容旧地址 `/projects/personal/longin-yu.github.io/index.html`。本机特有的 Ruby 安装路径和双栈端口转发操作记录在工作区 `scripts/tutorials/personal-homepage-jekyll-preview.md`。
+当前主目录的预览在远端 5500 端口，兼容旧地址 `/projects/personal/longin-yu.github.io/index.html`。本机特有的 Ruby 安装路径和双栈端口转发操作记录在工作区 `scripts/tutorials/personal-homepage-jekyll-preview.md`。
 
 ## 分支与发布
 
-- `main`：已发布版本。
-- `migration/acad-homepage`：本次模板迁移和预览。
+- `main`：日常维护与发布分支；已合并模板迁移，临时迁移分支和 worktree 已移除。
 - `backup/custom-homepage`：迁移前的定制主页，另有标签 `custom-homepage-before-acad`。
 - 后续修改从 `main` 创建短期分支，如 `content/add-paper` 或 `style/sidebar`，预览通过后合并。
 
-本次迁移完成时只保存本地提交，不推送。确认预览后，再将迁移分支合并到 `main` 并推送。GitHub Pages 应从 `main` 的仓库根目录构建 Jekyll；若当前仓库设置不同，需要在发布时确认 Settings → Pages 的构建来源。不提交 `.nojekyll`。
+修改后先检查本地预览，再提交并推送 `main`。GitHub Pages 应从 `main` 的仓库根目录构建 Jekyll；若当前仓库设置不同，需要在发布时确认 Settings → Pages 的构建来源。不提交 `.nojekyll`。
 
 ## Google Scholar 引用统计
 
 总引用徽章位于个人介绍第一段，不显示逐篇引用数。`_config.yml` 中的 `google_scholar_id` 为 `DnYC9yoAAAAJ`。首次成功获取的数据保存于 `_data/scholar.json`，构建时直接渲染，所以禁用 JavaScript 或统计服务不可用时仍有真实数据。日期标明快照的更新时间。引用徽章沿用上游的浅灰／浅蓝样式，避免首发时依赖尚未建立的远端统计分支。
 
-`.github/workflows/google_scholar_crawler.yml` 准备了每日抓取（08:17 UTC）和手动运行；首次推送此工作流到 main 时也会触发。成功后只向独立的 `google-scholar-stats` 分支提交两份 JSON，不改 main。页面在正式域名下读取该分支的 CDN 数据，仅接纳同一 Scholar 用户且不早于本地快照的数据；本地 5500 预览读取本地快照。本次仅配置工作流，没有执行任何 push 或远端 Actions。
+`.github/workflows/google_scholar_crawler.yml` 配置了每日抓取（08:17 UTC）和手动运行；相关文件推送到 main 时也会触发。成功后只向独立的 `google-scholar-stats` 分支提交两份 JSON，不改 main。页面在正式域名下读取该分支的 CDN 数据，仅接纳同一 Scholar 用户且不早于本地快照的数据；本地 5500 预览读取本地快照。
 
-Google Scholar 可能限制自动访问。初始化快照来自 2026-09-27 首次成功返回的公开主页；后续本机请求出现 HTTP 403，因此定时抓取在 GitHub Actions 环境中的连通性仍需发布后验证。抓取、解析或校验失败会让任务失败并保留上一次数据，不把失败写成 0。不要手工编造引用数，也不要将其他数据库引用数标成 Google Scholar。
+Google Scholar 可能限制自动访问。初始化快照来自 2026-09-27 首次成功返回的公开主页；后续本机请求出现 HTTP 403，首次 Actions 运行也遇到 HTTP 请求错误。工作流使用 `--skip-blocked`：遇到 HTTP 403 或 429 时显示警告和任务摘要，跳过统计分支更新，保留原数字与原更新时间，并在下一次定时运行重试。这表示本次没有获得新数据，不代表自动抓取已恢复。其他 HTTP、网络、解析或校验错误仍让任务失败；日志保留具体状态码或 curl 错误。不把失败写成 0，不手工编造引用数，也不将其他数据库引用数标成 Google Scholar。
 
 本地刷新需要 Python 3、curl、BeautifulSoup4 和 PyYAML：
 

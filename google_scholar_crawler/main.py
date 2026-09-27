@@ -1,13 +1,14 @@
 """Fetch public Google Scholar counts for the Acad Homepage stats branch.
 
-No login, API key or paid proxy is needed. Invalid/blocked responses fail before
-writing any files, so the last successful snapshot remains available.
+No login, API key or paid proxy is needed. Unavailable or invalid responses never
+overwrite the last successful snapshot. CI may explicitly skip HTTP 403/429.
 """
 import argparse
 import json
 import os
 import re
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlsplit
@@ -16,6 +17,32 @@ import yaml
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class ScholarHTTPError(RuntimeError):
+    def __init__(self, status, detail=""):
+        self.status = status
+        super().__init__(f"Google Scholar returned HTTP {status}. {detail}".strip())
+
+
+def fetch_page(url):
+    # Keep the HTTP status separate from the body, including when --fail exits 22.
+    # curl uses the machine's http_proxy / https_proxy configuration.
+    response = subprocess.run(
+        ["curl", "--fail", "--silent", "--show-error", "--location",
+         "--max-time", "30", "--write-out", "\n%{http_code}", url],
+        check=False, capture_output=True, timeout=35,
+    )
+    body, _, status_text = response.stdout.rpartition(b"\n")
+    status = int(status_text) if re.fullmatch(rb"\d{3}", status_text) else 0
+    detail = (response.stderr or b"").decode("utf-8", errors="replace").strip()
+    if response.returncode:
+        if response.returncode == 22 and status >= 400:
+            raise ScholarHTTPError(status, detail)
+        raise RuntimeError(f"Scholar request failed (curl exit {response.returncode}): {detail}")
+    if status != 200:
+        raise ScholarHTTPError(status, detail)
+    return body
 
 
 def parse_count(text, *, empty_is_zero=False):
@@ -76,13 +103,7 @@ def fetch_stats(scholar_id):
         if start:
             params["cstart"] = start
         url = "https://scholar.google.com/citations?" + urlencode(params)
-        # curl uses the machine's http_proxy / https_proxy configuration.
-        response = subprocess.run(
-            ["curl", "--fail", "--silent", "--show-error", "--location",
-             "--max-time", "30", url],
-            check=True, capture_output=True, timeout=35,
-        )
-        page = parse_page(response.stdout, scholar_id, first_page=start == 0)
+        page = parse_page(fetch_page(url), scholar_id, first_page=start == 0)
         if start == 0:
             for key in ("name", "citedby", "hindex", "i10index"):
                 stats[key] = page[key]
@@ -106,15 +127,38 @@ def write_json(path, data):
     temporary.replace(path)
 
 
+def report_result(updated, message):
+    if os.environ.get("GITHUB_OUTPUT"):
+        with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+            output.write(f"updated={str(updated).lower()}\n")
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as summary:
+            summary.write(message + "\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--scholar-id", default=os.environ.get("GOOGLE_SCHOLAR_ID"))
     parser.add_argument("--output", type=Path, default=Path(__file__).parent / "results")
     parser.add_argument("--snapshot", type=Path, help="Also refresh the Jekyll build-time snapshot.")
+    parser.add_argument("--skip-blocked", action="store_true",
+                        help="Skip HTTP 403/429 with a warning and keep existing data unchanged.")
     args = parser.parse_args()
     config = yaml.safe_load((ROOT / "_config.yml").read_text(encoding="utf-8"))
     scholar_id = args.scholar_id or config["google_scholar_id"]
-    stats = fetch_stats(scholar_id)
+    try:
+        stats = fetch_stats(scholar_id)
+    except ScholarHTTPError as error:
+        if not args.skip_blocked or error.status not in (403, 429):
+            raise
+        message = (f"Citation refresh skipped: Google Scholar returned HTTP {error.status}. "
+                   "Existing citation counts and their update date remain unchanged. "
+                   "The next scheduled run will try again.")
+        in_actions = os.environ.get("GITHUB_ACTIONS") == "true"
+        prefix = "::warning::" if in_actions else "Warning: "
+        print(prefix + message, file=sys.stdout if in_actions else sys.stderr)
+        report_result(False, message)
+        return
     write_json(args.output / "gs_data.json", stats)
     write_json(args.output / "gs_data_shieldsio.json", {
         "schemaVersion": 1,
@@ -123,8 +167,10 @@ def main():
     })
     if args.snapshot:
         write_json(args.snapshot, stats)
-    print(f"Updated {stats['name']}: {stats['citedby']} citations; "
-          f"{len(stats['publications'])} publications; {stats['updated']}")
+    message = (f"Updated {stats['name']}: {stats['citedby']} citations; "
+               f"{len(stats['publications'])} publications; {stats['updated']}")
+    print(message)
+    report_result(True, message)
 
 
 if __name__ == "__main__":

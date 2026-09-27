@@ -33,8 +33,10 @@ jobs:
       - name: Install crawler dependencies
         run: python -m pip install -r google_scholar_crawler/requirements.txt
       - name: Read public Scholar counts
-        run: python google_scholar_crawler/main.py --output "$RUNNER_TEMP/scholar"
+        id: scholar
+        run: python google_scholar_crawler/main.py --skip-blocked --output "$RUNNER_TEMP/scholar"
       - name: Update the statistics branch
+        if: steps.scholar.outputs.updated == 'true'
         shell: bash
         run: |
           set -euo pipefail

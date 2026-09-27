@@ -14,9 +14,11 @@
     "imageWidth": 360,
     "imageHeight": 220,
     "imageCaption": "Geometry to language",
-    "section": "selected",
+    "section": "publications",
     "bibtex": "@misc{geoperceive26,\n  title = {{Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning}},\n  author = {Hao Yu and Shuning Jia and Guanghao Li and Wenhao Jiang and Chun Yuan},\n  year = {2026},\n  eprint = {2602.22703},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2602.22703}\n}",
-    "imageFull": "assets/images/geoperceive.png"
+    "imageFull": "assets/images/geoperceive.png",
+    "featured": true,
+    "scholarId": "DnYC9yoAAAAJ:4TOpqqG69KYC"
   },
   {
     "id": "omnialpha",
@@ -33,8 +35,10 @@
     "imageWidth": 3478,
     "imageHeight": 3046,
     "imageCaption": "Generation with transparency",
-    "section": "selected",
-    "bibtex": "@misc{omnialpha25,\n  title = {{OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning}},\n  author = {Hao Yu and Jinglin Wang and Jiabo Zhan and Rui Chen and Zile Wang and Huaisong Zhang and Hongyu Li and Xinrui Chen and Yongxian Wei and Chun Yuan},\n  year = {2025},\n  eprint = {2511.20211},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2511.20211}\n}"
+    "section": "publications",
+    "bibtex": "@misc{omnialpha25,\n  title = {{OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning}},\n  author = {Hao Yu and Jinglin Wang and Jiabo Zhan and Rui Chen and Zile Wang and Huaisong Zhang and Hongyu Li and Xinrui Chen and Yongxian Wei and Chun Yuan},\n  year = {2025},\n  eprint = {2511.20211},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2511.20211}\n}",
+    "featured": true,
+    "scholarId": "DnYC9yoAAAAJ:QIV2ME_5wuYC"
   },
   {
     "id": "agentbench",
@@ -51,8 +55,10 @@
     "imageWidth": 2788,
     "imageHeight": 1228,
     "imageCaption": "Eight interactive environments",
-    "section": "selected",
-    "bibtex": "@misc{agentbench23,\n  title = {{AgentBench: Evaluating LLMs as Agents}},\n  author = {Xiao Liu and Hao Yu and Hanchen Zhang and Yifan Xu and Xuanyu Lei and Hanyu Lai and Yu Gu and Hangliang Ding and Kaiwen Men and Kejuan Yang and Shudan Zhang and Xiang Deng and Aohan Zeng and Zhengxiao Du and Chenhui Zhang and Sheng Shen and Tianjun Zhang and Yu Su and Huan Sun and Minlie Huang and Yuxiao Dong and Jie Tang},\n  year = {2023},\n  eprint = {2308.03688},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2308.03688}\n}"
+    "section": "publications",
+    "bibtex": "@misc{agentbench23,\n  title = {{AgentBench: Evaluating LLMs as Agents}},\n  author = {Xiao Liu and Hao Yu and Hanchen Zhang and Yifan Xu and Xuanyu Lei and Hanyu Lai and Yu Gu and Hangliang Ding and Kaiwen Men and Kejuan Yang and Shudan Zhang and Xiang Deng and Aohan Zeng and Zhengxiao Du and Chenhui Zhang and Sheng Shen and Tianjun Zhang and Yu Su and Huan Sun and Minlie Huang and Yuxiao Dong and Jie Tang},\n  year = {2023},\n  eprint = {2308.03688},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2308.03688}\n}",
+    "featured": true,
+    "scholarId": "DnYC9yoAAAAJ:u-x6o8ySG0sC"
   },
   {
     "id": "comrope",
@@ -69,8 +75,10 @@
     "imageWidth": 2726,
     "imageHeight": 1528,
     "imageCaption": "Learning positional structure",
-    "section": "selected",
-    "bibtex": "@misc{comrope25,\n  title = {{ComRoPE: Scalable and Robust Rotary Position Embedding Parameterized by Trainable Commuting Angle Matrices}},\n  author = {Hao Yu and Tangyu Jiang and Shuning Jia and Shannan Yan and Shunning Liu and Haolong Qian and Guanghao Li and Shuting Dong and Huaisong Zhang and Chun Yuan},\n  year = {2025},\n  eprint = {2506.03737},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2506.03737}\n}"
+    "section": "publications",
+    "bibtex": "@misc{comrope25,\n  title = {{ComRoPE: Scalable and Robust Rotary Position Embedding Parameterized by Trainable Commuting Angle Matrices}},\n  author = {Hao Yu and Tangyu Jiang and Shuning Jia and Shannan Yan and Shunning Liu and Haolong Qian and Guanghao Li and Shuting Dong and Huaisong Zhang and Chun Yuan},\n  year = {2025},\n  eprint = {2506.03737},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2506.03737}\n}",
+    "featured": true,
+    "scholarId": "DnYC9yoAAAAJ:0EnyYjriUFMC"
   },
   {
     "id": "alphavae",
@@ -79,7 +87,9 @@
     "authors": "Zile Wang*, Hao Yu*, Jiabo Zhan, Chun Yuan",
     "paperUrl": "https://arxiv.org/abs/2507.09308",
     "codeUrl": "https://github.com/o0o0o00o0/AlphaVAE",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:3fE2CSJIrl8C"
   },
   {
     "id": "visualagentbench",
@@ -88,7 +98,9 @@
     "authors": "Xiao Liu, Tianjie Zhang, Yu Gu, Iat Long Iong, Yifan Xu, Xixuan Song, Shudan Zhang, Hanyu Lai, Xinyi Liu, Hanlin Zhao, Jiadai Sun, Xinyue Yang, Yu Yang, Zehan Qi, Shuntian Yao, Xueqiao Sun, Siyi Cheng, Qinkai Zheng, Hao Yu, Hanchen Zhang, Wenyi Hong, Ming Ding, Lihang Pan, Xiaotao Gu, Aohan Zeng, Zhengxiao Du, Chan Hee Song, Yu Su, Yuxiao Dong, Jie Tang",
     "paperUrl": "https://arxiv.org/abs/2408.06327",
     "codeUrl": "https://github.com/THUDM/VisualAgentBench",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:roLk4NBRz8UC"
   },
   {
     "id": "autowebglm",
@@ -97,7 +109,9 @@
     "authors": "Hanyu Lai*, Xiao Liu*, Iat Long Iong*, Shuntian Yao, Yuxuan Chen, Pengbo Shen, Hao Yu, Hanchen Zhang, Xiaohan Zhang, Yuxiao Dong, Jie Tang",
     "paperUrl": "https://arxiv.org/abs/2404.03648",
     "codeUrl": "https://github.com/THUDM/AutoWebGLM",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:d1gkVwhDpl0C"
   },
   {
     "id": "middleware",
@@ -106,7 +120,9 @@
     "authors": "Yu Gu, Yiheng Shu, Hao Yu, Xiao Liu, Yuxiao Dong, Jie Tang, Jayanth Srinivasa, Hugo Latapie, Yu Su",
     "paperUrl": "https://arxiv.org/abs/2402.14672",
     "codeUrl": "https://github.com/OSU-NLP-Group/Middleware",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:zYLM7Y9cAGgC"
   },
   {
     "id": "openwebagent",
@@ -115,7 +131,9 @@
     "authors": "Iat Long Iong, Xiao Liu, Yuxuan Chen, Hanyu Lai, Shuntian Yao, Pengbo Shen, Hao Yu, Yuxiao Dong, Jie Tang",
     "paperUrl": "https://aclanthology.org/2024.acl-demos.8/",
     "codeUrl": "https://github.com/THUDM/OpenWebAgent",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:IjCSPb-OGe4C"
   },
   {
     "id": "webglm",
@@ -124,7 +142,9 @@
     "authors": "Xiao Liu*, Hanyu Lai*, Hao Yu*, Yifan Xu, Aohan Zeng, Zhengxiao Du, Peng Zhang, Yuxiao Dong, Jie Tang",
     "paperUrl": "https://arxiv.org/abs/2306.07906",
     "codeUrl": "https://github.com/THUDM/WebGLM",
-    "section": "publications"
+    "section": "publications",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:u5HHmVD_uO8C"
   },
   {
     "id": "seed2",
@@ -133,7 +153,9 @@
     "authors": "ByteDance Seed",
     "paperUrl": "https://arxiv.org/abs/2607.00248",
     "codeUrl": "https://github.com/ByteDance-Seed/Seed2.0",
-    "section": "projects"
+    "section": "reports",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:Wp0gIr-vW9MC"
   },
   {
     "id": "seed18",
@@ -142,7 +164,9 @@
     "authors": "ByteDance Seed",
     "paperUrl": "https://arxiv.org/abs/2603.20633",
     "codeUrl": "https://github.com/ByteDance-Seed/Seed-1.8",
-    "section": "projects"
+    "section": "reports",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:qxL8FJ1GzNcC"
   },
   {
     "id": "ui-tars-2",
@@ -151,7 +175,9 @@
     "authors": "ByteDance Seed",
     "paperUrl": "https://arxiv.org/pdf/2509.02544",
     "codeUrl": "https://github.com/bytedance/UI-TARS",
-    "section": "projects"
+    "section": "reports",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:MXK_kJrjxJIC"
   },
   {
     "id": "chatglm",
@@ -160,6 +186,8 @@
     "authors": "Team GLM",
     "paperUrl": "https://arxiv.org/pdf/2406.12793",
     "codeUrl": "https://github.com/THUDM",
-    "section": "projects"
+    "section": "reports",
+    "featured": false,
+    "scholarId": "DnYC9yoAAAAJ:eQOLeE2rZwMC"
   }
 ]

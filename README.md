@@ -8,15 +8,18 @@
 | --- | --- |
 | 姓名、学校、邮箱、头像、主页链接 | `_config.yml` |
 | 英文介绍、栏目顺序 | `_pages/about.md` |
-| 论文与团队项目 | `_data/publications.json` |
+| 论文与技术报告 | `_data/publications.json` |
+| News | `_data/news.yml` |
+| Internship | `_data/internships.yml` |
+| Scholar 引用快照 | `_data/scholar.json` |
 | 顶部导航 | `_data/navigation.yml` |
 | 单篇论文的 HTML | `_includes/publication.html` |
 | 个人样式调整 | `_sass/_custom.scss` |
 | 图片 | `assets/images/` |
 
-论文数据的 `section` 分别为 `selected`、`publications`、`projects`；同一栏内按照 JSON 顺序展示。作者列表保留原始顺序，`Hao Yu` 自动加粗，`*` 显示为共同贡献标记。团队项目只展示标题、署名、发表信息和资源链接，不填写个人职责。
+页面沿用模板原有侧栏、字号、论文大图和会议角标，栏目为 News、Publications、Technical Reports、Internship。论文数据的 `section` 分别为 `publications`、`reports`；`featured: true` 的论文在 Publications 前半部使用图文排版，其余论文和报告使用紧凑列表。各组内按 JSON 顺序展示。作者列表保留原始顺序，`Hao Yu` 自动加粗，`*` 显示为共同贡献标记。团队项目只展示标题、署名、发表信息和资源链接，不填写个人职责。
 
-代表作可包含 `image`、`imageFull`、`imageAlt`、`imageWidth`、`imageHeight`、`imageCaption`、`topic` 和 `description`。本地资源路径相对仓库根目录，如 `assets/images/comrope.png`。请让 `id` 唯一，已发布条目尽量保留原 ID，避免原有锚点失效。
+图文论文可包含 `image`、`imageFull`、`imageAlt`、`imageWidth`、`imageHeight` 和 `description`。`scholarId` 是 Google Scholar 论文详情页中 `citation_for_view` 的完整值，用于准确匹配每篇引用数。本地资源路径相对仓库根目录，如 `assets/images/comrope.png`。请让 `id` 唯一，已发布条目尽量保留原 ID，避免原有锚点失效。
 
 BibTeX 的正文只维护 JSON 中的 `bibtex`。Jekyll 自动将它用于页面和 `assets/citations/*.bib` 下载。为新论文增加下载时，新建同名 `.bib` 文件，复制已有文件的模板，仅修改 front matter 的 `publication_id`，使其对应论文 ID。
 
@@ -51,9 +54,25 @@ git diff --check
 
 本次迁移完成时只保存本地提交，不推送。确认预览后，再将迁移分支合并到 `main` 并推送。GitHub Pages 应从 `main` 的仓库根目录构建 Jekyll；若当前仓库设置不同，需要在发布时确认 Settings → Pages 的构建来源。不提交 `.nojekyll`。
 
-## 可选功能与模板更新
+## Google Scholar 引用统计
 
-Google Analytics 和 Scholar 引用统计默认关闭。没有自动抓取或写入远端分支的工作流。保留 `google_scholar_crawler/` 作为上游可选功能的参考；配置统计功能时需先生成并发布统计 JSON，再设置 `google_scholar_stats_enabled: true`、添加相应展示节点。只打开开关不会自动生成统计数据。
+已启用总引用徽章与逐篇引用数。`_config.yml` 中的 `google_scholar_id` 为 `DnYC9yoAAAAJ`。首次成功获取的数据保存于 `_data/scholar.json`，构建时直接渲染，所以禁用 JavaScript 或统计服务不可用时仍有真实数据。日期标明快照的更新时间。引用徽章沿用上游的浅灰／浅蓝样式，避免首发时依赖尚未建立的远端统计分支。
+
+`.github/workflows/google_scholar_crawler.yml` 准备了每日抓取（08:17 UTC）和手动运行；首次推送此工作流到 main 时也会触发。成功后只向独立的 `google-scholar-stats` 分支提交两份 JSON，不改 main。页面在正式域名下读取该分支的 CDN 数据，仅接纳同一 Scholar 用户且不早于本地快照的数据；本地 5500 预览读取本地快照。本次仅配置工作流，没有执行任何 push 或远端 Actions。
+
+Google Scholar 可能限制自动访问。初始化快照来自 2026-09-27 首次成功返回的公开主页；后续本机请求出现 HTTP 403，因此定时抓取在 GitHub Actions 环境中的连通性仍需发布后验证。抓取、解析或校验失败会让任务失败并保留上一次数据，不把失败写成 0。不要手工编造引用数，也不要将其他数据库引用数标成 Google Scholar。
+
+本地刷新需要 Python 3、curl、BeautifulSoup4 和 PyYAML：
+
+```bash
+python3 -m pip install -r google_scholar_crawler/requirements.txt
+python3 google_scholar_crawler/main.py --snapshot _data/scholar.json
+python3 -m unittest discover -s google_scholar_crawler -v
+```
+
+抓取结果也会写入被忽略的 `google_scholar_crawler/results/`。要刷新发布时自带的快照，成功抓取后提交 `_data/scholar.json`。公开 Scholar ID 不需要设置为 GitHub Secret；工作流仅使用仓库自带的 GITHUB_TOKEN，仓库或组织策略需允许 `contents: write`。Google Analytics 继续关闭。
+
+## 模板更新
 
 模板来源、版本及定制范围见 [docs/template.md](docs/template.md)。以后升级模板时对照上游差异，逐项移植需要的修复，保留本站数据和个人样式。
 

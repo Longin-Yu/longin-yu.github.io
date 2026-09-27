@@ -1,0 +1,10 @@
+{% if site.google_scholar_stats_enabled %}
+{% assign stats = site.data.scholar %}
+<p class="scholar-summary">
+  You can find my full publication list on <a href="{{ site.author.googlescholar | escape }}">Google Scholar</a>.
+  <a class="scholar-badge" href="{{ site.author.googlescholar | escape }}" aria-label="Google Scholar citations">
+    <span class="scholar-badge-label"><i class="fas fa-graduation-cap" aria-hidden="true"></i> citations</span><strong id="total_cit">{{ stats.citedby | default: '—' }}</strong>
+  </a>
+  {% if stats.updated %}<span class="scholar-updated">Updated <time id="scholar-updated" datetime="{{ stats.updated }}">{{ stats.updated | date: '%Y-%m-%d' }}</time></span>{% endif %}
+</p>
+{% endif %}

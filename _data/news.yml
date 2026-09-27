@@ -1,0 +1,12 @@
+# Dates and events follow Jiabo Zhan's public News, checked 2026-09-27.
+# Source: https://tonyzhan10.github.io/
+- date: "2026.09"
+  text: "[WeVisDoc](https://tencent.github.io/WeVisDoc/) is out, with open-source code and 2B/4B models for robust end-to-end document parsing."
+- date: "2026.08"
+  text: "[PaDoc](https://arxiv.org/abs/2608.06146) is out, with open-source code and model weights."
+- date: "2026.08"
+  text: "🎉 **OmniAlpha has been accepted to ACM Multimedia 2026 as an Oral Presentation!**"
+- date: "2025.11"
+  text: "[OmniAlpha](https://github.com/Longin-Yu/OmniAlpha) is out, with open-source code and model weights."
+- date: "2025.07"
+  text: "[AlphaVAE](https://github.com/o0o0o00o0/AlphaVAE) is out, with open-source code, data, and models."

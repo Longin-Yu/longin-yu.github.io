@@ -1,35 +1,27 @@
 {% assign pub = include.publication %}
-<article id="{{ pub.id | escape }}" class="publication {% if pub.section == 'selected' %}paper-box{% else %}publication-compact{% endif %}" aria-labelledby="{{ pub.id | escape }}-title" data-section="{{ pub.section | escape }}">
-  {% if pub.section == 'selected' and pub.image %}
-  <figure class="paper-box-image">
-    <a href="{{ pub.imageFull | default: pub.image | relative_url }}" aria-label="View full figure for {{ pub.name | escape }}">
-      <img src="{{ pub.image | relative_url }}" width="{{ pub.imageWidth }}" height="{{ pub.imageHeight }}" alt="{{ pub.imageAlt | escape }}" loading="lazy" decoding="async">
-    </a>
-    {% if pub.imageCaption %}<figcaption>{{ pub.imageCaption | escape }}</figcaption>{% endif %}
-  </figure>
-  {% endif %}
-  <div class="{% if pub.section == 'selected' %}paper-box-text{% else %}publication-text{% endif %}">
-    <p class="publication-meta"><span class="venue">{{ pub.venue | escape }}</span>{% if pub.topic %}<span class="research-topic">{{ pub.topic | escape }}</span>{% endif %}</p>
+{% if pub.featured %}
+<article id="{{ pub.id | escape }}" class="publication paper-box" aria-labelledby="{{ pub.id | escape }}-title" data-section="{{ pub.section | escape }}">
+  <div class="paper-box-image">
+    <div class="paper-figure">
+      <div class="badge venue">{{ pub.venue | escape }}</div>
+      <a href="{{ pub.imageFull | default: pub.image | relative_url }}" aria-label="View full figure for {{ pub.name | escape }}">
+        <img src="{{ pub.image | relative_url }}" width="{{ pub.imageWidth }}" height="{{ pub.imageHeight }}" alt="{{ pub.imageAlt | escape }}" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+  <div class="paper-box-text">
     <h3 id="{{ pub.id | escape }}-title"><a href="{{ pub.paperUrl | escape }}">{{ pub.title | escape }}</a></h3>
     <p class="authors">{{ pub.authors | escape | replace: 'Hao Yu', '<strong>Hao Yu</strong>' | replace: '*', '<sup>*</sup>' }}</p>
-    {% if pub.description and pub.section != 'projects' %}<p class="publication-description">{{ pub.description | escape }}</p>{% endif %}
-    <div class="publication-links">
-      <a href="{{ pub.paperUrl | escape }}">Paper</a>
-      {% if pub.codeUrl %}<a href="{{ pub.codeUrl | escape }}">Code</a>{% endif %}
-      {% if pub.projectUrl %}<a href="{{ pub.projectUrl | escape }}">Project</a>{% endif %}
-    </div>
-    {% if pub.bibtex %}
-    <details class="citation">
-      <summary>BibTeX<span class="visually-hidden"> for {{ pub.name | default: pub.title | escape }}</span></summary>
-      <div class="citation-body">
-        <div class="citation-actions">
-          <button class="copy-citation" type="button" hidden>Copy citation</button>
-          <a href="{{ '/assets/citations/' | append: pub.id | append: '.bib' | relative_url }}" download="{{ pub.id | escape }}.bib">Download .bib</a>
-          <span class="copy-status" role="status" aria-live="polite"></span>
-        </div>
-        <pre><code>{{ pub.bibtex | escape }}</code></pre>
-      </div>
-    </details>
-    {% endif %}
+    {% include paper-links.html publication=pub %}
+    {% if pub.description %}<p class="publication-description">{{ pub.description | escape }}</p>{% endif %}
+    {% include citation.html publication=pub %}
   </div>
 </article>
+{% else %}
+<li id="{{ pub.id | escape }}" class="publication publication-list-item" data-section="{{ pub.section | escape }}">
+  <a class="publication-title" id="{{ pub.id | escape }}-title" href="{{ pub.paperUrl | escape }}">{{ pub.title | escape }}</a>,
+  <span class="authors">{{ pub.authors | escape | replace: 'Hao Yu', '<strong>Hao Yu</strong>' | replace: '*', '<sup>*</sup>' }}</span>,
+  <strong class="venue">{{ pub.venue | escape }}</strong>.
+  {% include paper-links.html publication=pub %}
+</li>
+{% endif %}

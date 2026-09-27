@@ -1,19 +1,10 @@
-<script>
-  // Optional: first publish stats JSON to the google-scholar-stats branch.
+<script src="{{ '/assets/scholar.js' | relative_url }}" defer
+  data-scholar-id="{{ site.google_scholar_id | escape }}"
+  data-updated="{{ site.data.scholar.updated | escape }}"
+  data-snapshot-url="{{ '/assets/data/gs_data.json' | relative_url }}"
   {% if site.google_scholar_stats_use_cdn %}
-  const scholarDataURL = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@google-scholar-stats/gs_data.json';
+  data-remote-url="https://cdn.jsdelivr.net/gh/{{ site.repository }}@google-scholar-stats/gs_data.json"
   {% else %}
-  const scholarDataURL = 'https://raw.githubusercontent.com/{{ site.repository }}/google-scholar-stats/gs_data.json';
+  data-remote-url="https://raw.githubusercontent.com/{{ site.repository }}/google-scholar-stats/gs_data.json"
   {% endif %}
-  fetch(scholarDataURL).then(response => {
-    if (!response.ok) throw new Error('Scholar stats unavailable');
-    return response.json();
-  }).then(data => {
-    const total = document.getElementById('total_cit');
-    if (total) total.textContent = data.citedby;
-    document.querySelectorAll('.show_paper_citations').forEach(element => {
-      const publication = (data.publications || {})[element.getAttribute('data')];
-      if (publication) element.textContent = '| Citations: ' + publication.num_citations;
-    });
-  }).catch(() => { /* Citation counts are optional; keep the page readable. */ });
-</script>
+></script>

@@ -17,8 +17,9 @@ author:
   github: "Longin-Yu"
   googlescholar: "https://scholar.google.com/citations?user=DnYC9yoAAAAJ&hl=en"
 
-# Optional integrations stay off until deliberately configured.
-google_scholar_stats_enabled: false
+# Google Scholar counts are cached locally and refreshed from the stats branch.
+google_scholar_id: "DnYC9yoAAAAJ"
+google_scholar_stats_enabled: true
 google_scholar_stats_use_cdn: true
 google_analytics_id: ""
 

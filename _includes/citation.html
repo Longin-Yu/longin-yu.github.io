@@ -1,0 +1,14 @@
+{% assign paper = include.publication %}
+{% if paper.bibtex %}
+<details class="citation">
+  <summary>BibTeX<span class="visually-hidden"> for {{ paper.name | default: paper.title | escape }}</span></summary>
+  <div class="citation-body">
+    <div class="citation-actions">
+      <button class="copy-citation" type="button" hidden>Copy citation</button>
+      <a href="{{ '/assets/citations/' | append: paper.id | append: '.bib' | relative_url }}" download="{{ paper.id | escape }}.bib">Download .bib</a>
+      <span class="copy-status" role="status" aria-live="polite"></span>
+    </div>
+    <pre><code>{{ paper.bibtex | escape }}</code></pre>
+  </div>
+</details>
+{% endif %}

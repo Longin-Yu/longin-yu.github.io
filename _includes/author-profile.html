@@ -3,13 +3,20 @@
     <img src="{{ site.author.avatar | relative_url }}" width="175" height="175" alt="{{ site.author.name | escape }}" fetchpriority="high">
   </div>
   <div class="author__content">
-    <h2 class="author__name">{{ site.author.name | escape }}</h2>
+    <h3 class="author__name">{{ site.author.name | escape }}</h3>
     <p class="author__alternate">{{ site.author.alternate_name | escape }} · <span lang="zh">{{ site.author.chinese_name | escape }}</span></p>
     <p class="author__bio">{{ site.author.bio | escape }}<br>{{ site.author.employer | escape }}</p>
   </div>
-  <nav class="profile-links" aria-label="Contact and profiles">
-    <a href="mailto:{{ site.author.email | escape }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
-    <a href="{{ site.author.googlescholar | escape }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
-    <a href="https://github.com/{{ site.author.github | escape }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-  </nav>
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+      <li><a href="mailto:{{ site.author.email | escape }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+      <li><a href="https://github.com/{{ site.author.github | escape }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+      <li><a href="{{ site.author.googlescholar | escape }}"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a></li>
+    </ul>
+    <div class="author__urls_sm">
+      <a href="mailto:{{ site.author.email | escape }}" aria-label="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
+      <a href="https://github.com/{{ site.author.github | escape }}" aria-label="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+      <a href="{{ site.author.googlescholar | escape }}" aria-label="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a>
+    </div>
+  </div>
 </div>

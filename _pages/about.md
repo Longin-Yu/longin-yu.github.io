@@ -8,7 +8,6 @@ redirect_from:
 <section id="about-me" aria-label="About Me">
   <h1 class="visually-hidden">About Me</h1>
   <p>I'm a PhD student at Tsinghua University, working on <strong>vision-language models</strong>, <strong>generalist agents</strong>, and <strong>image generation</strong>. {% include scholar-summary.html %}</p>
-  <!-- <p>Across these directions, I study how models interpret geometric diagrams, how agents reason and act in interactive environments, and how image generators represent opacity and compose multiple layers. I also explore learnable positional representations for visual models, with a focus on flexibility and generalization across different image resolutions and positional shifts.</p> -->
 </section>
 
 <section id="news" aria-labelledby="news-heading">

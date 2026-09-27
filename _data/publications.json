@@ -149,7 +149,7 @@
     "id": "wevisdoc",
     "title": "WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing",
     "venue": "Technical Report · 2026",
-    "authors": "Hao Yu*, Kang Liu*, Linnan Zhao*, Jiabo Zhan*, Chong Sun, Chen Li, Jing Lyu",
+    "authors": "Wechat Vision",
     "paperUrl": "https://arxiv.org/abs/2609.20423",
     "codeUrl": "https://github.com/Tencent/WeVisDoc",
     "projectUrl": "https://tencent.github.io/WeVisDoc/",

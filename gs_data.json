@@ -1,0 +1,151 @@
+{
+  "scholar_id": "DnYC9yoAAAAJ",
+  "source": "https://scholar.google.com/citations?user=DnYC9yoAAAAJ&hl=en",
+  "publications": {
+    "DnYC9yoAAAAJ:u-x6o8ySG0sC": {
+      "author_pub_id": "DnYC9yoAAAAJ:u-x6o8ySG0sC",
+      "bib": {
+        "title": "Agentbench: Evaluating llms as agents"
+      },
+      "num_citations": 2660
+    },
+    "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
+      "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
+      "bib": {
+        "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
+      },
+      "num_citations": 2146
+    },
+    "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
+      "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
+      "bib": {
+        "title": "WebGLM: towards an efficient web-enhanced question answering system with human preferences"
+      },
+      "num_citations": 160
+    },
+    "DnYC9yoAAAAJ:MXK_kJrjxJIC": {
+      "author_pub_id": "DnYC9yoAAAAJ:MXK_kJrjxJIC",
+      "bib": {
+        "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning"
+      },
+      "num_citations": 140
+    },
+    "DnYC9yoAAAAJ:WF5omc3nYNoC": {
+      "author_pub_id": "DnYC9yoAAAAJ:WF5omc3nYNoC",
+      "bib": {
+        "title": "Androidlab: Training and systematic benchmarking of android autonomous agents"
+      },
+      "num_citations": 122
+    },
+    "DnYC9yoAAAAJ:d1gkVwhDpl0C": {
+      "author_pub_id": "DnYC9yoAAAAJ:d1gkVwhDpl0C",
+      "bib": {
+        "title": "Autowebglm: A large language model-based web navigating agent"
+      },
+      "num_citations": 107
+    },
+    "DnYC9yoAAAAJ:Wp0gIr-vW9MC": {
+      "author_pub_id": "DnYC9yoAAAAJ:Wp0gIr-vW9MC",
+      "bib": {
+        "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity"
+      },
+      "num_citations": 82
+    },
+    "DnYC9yoAAAAJ:zYLM7Y9cAGgC": {
+      "author_pub_id": "DnYC9yoAAAAJ:zYLM7Y9cAGgC",
+      "bib": {
+        "title": "Middleware for llms: Tools are instrumental for language agents in complex environments"
+      },
+      "num_citations": 75
+    },
+    "DnYC9yoAAAAJ:qxL8FJ1GzNcC": {
+      "author_pub_id": "DnYC9yoAAAAJ:qxL8FJ1GzNcC",
+      "bib": {
+        "title": "Seed1. 8 model card: Towards generalized real-world agency"
+      },
+      "num_citations": 62
+    },
+    "DnYC9yoAAAAJ:roLk4NBRz8UC": {
+      "author_pub_id": "DnYC9yoAAAAJ:roLk4NBRz8UC",
+      "bib": {
+        "title": "VisualAgentBench: Towards Large Multimodal Models as Visual Agents"
+      },
+      "num_citations": 47
+    },
+    "DnYC9yoAAAAJ:IjCSPb-OGe4C": {
+      "author_pub_id": "DnYC9yoAAAAJ:IjCSPb-OGe4C",
+      "bib": {
+        "title": "Openwebagent: An open toolkit to enable web agents on large language models"
+      },
+      "num_citations": 39
+    },
+    "DnYC9yoAAAAJ:KlAtU1dfN6UC": {
+      "author_pub_id": "DnYC9yoAAAAJ:KlAtU1dfN6UC",
+      "bib": {
+        "title": "Editthinker: Unlocking iterative reasoning for any image editor"
+      },
+      "num_citations": 23
+    },
+    "DnYC9yoAAAAJ:0EnyYjriUFMC": {
+      "author_pub_id": "DnYC9yoAAAAJ:0EnyYjriUFMC",
+      "bib": {
+        "title": "Comrope: Scalable and robust rotary position embedding parameterized by trainable commuting angle matrices"
+      },
+      "num_citations": 15
+    },
+    "DnYC9yoAAAAJ:9ZlFYXVOiuMC": {
+      "author_pub_id": "DnYC9yoAAAAJ:9ZlFYXVOiuMC",
+      "bib": {
+        "title": "Clawbench: Can ai agents complete everyday online tasks?"
+      },
+      "num_citations": 10
+    },
+    "DnYC9yoAAAAJ:3fE2CSJIrl8C": {
+      "author_pub_id": "DnYC9yoAAAAJ:3fE2CSJIrl8C",
+      "bib": {
+        "title": "Alphavae: Unified end-to-end rgba image reconstruction and generation with alpha-aware representation learning"
+      },
+      "num_citations": 10
+    },
+    "DnYC9yoAAAAJ:Zph67rFs4hoC": {
+      "author_pub_id": "DnYC9yoAAAAJ:Zph67rFs4hoC",
+      "bib": {
+        "title": "Scout: Teaching pre-trained language models to enhance reasoning via flow chain-of-thought"
+      },
+      "num_citations": 8
+    },
+    "DnYC9yoAAAAJ:QIV2ME_5wuYC": {
+      "author_pub_id": "DnYC9yoAAAAJ:QIV2ME_5wuYC",
+      "bib": {
+        "title": "OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning"
+      },
+      "num_citations": 7
+    },
+    "DnYC9yoAAAAJ:hqOjcs7Dif8C": {
+      "author_pub_id": "DnYC9yoAAAAJ:hqOjcs7Dif8C",
+      "bib": {
+        "title": "Webglm: Towards an efficient and reliable web-enhanced question-answering system"
+      },
+      "num_citations": 5
+    },
+    "DnYC9yoAAAAJ:mVmsd5A6BfQC": {
+      "author_pub_id": "DnYC9yoAAAAJ:mVmsd5A6BfQC",
+      "bib": {
+        "title": "PaDoc: Layout-Grounded Parallel Decoding for Document Parsing"
+      },
+      "num_citations": 1
+    },
+    "DnYC9yoAAAAJ:4TOpqqG69KYC": {
+      "author_pub_id": "DnYC9yoAAAAJ:4TOpqqG69KYC",
+      "bib": {
+        "title": "Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning"
+      },
+      "num_citations": 0
+    }
+  },
+  "name": "Hao Yu",
+  "citedby": 5719,
+  "hindex": 13,
+  "i10index": 15,
+  "updated": "2026-10-03T13:23:55+00:00"
+}

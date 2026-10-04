@@ -7,14 +7,14 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 2660
+      "num_citations": 2669
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2146
+      "num_citations": 2150
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -49,7 +49,7 @@
       "bib": {
         "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity"
       },
-      "num_citations": 82
+      "num_citations": 83
     },
     "DnYC9yoAAAAJ:zYLM7Y9cAGgC": {
       "author_pub_id": "DnYC9yoAAAAJ:zYLM7Y9cAGgC",
@@ -63,7 +63,7 @@
       "bib": {
         "title": "Seed1. 8 model card: Towards generalized real-world agency"
       },
-      "num_citations": 62
+      "num_citations": 63
     },
     "DnYC9yoAAAAJ:roLk4NBRz8UC": {
       "author_pub_id": "DnYC9yoAAAAJ:roLk4NBRz8UC",
@@ -144,8 +144,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 5719,
+  "citedby": 5734,
   "hindex": 13,
   "i10index": 15,
-  "updated": "2026-10-03T13:23:55+00:00"
+  "updated": "2026-10-04T14:05:53+00:00"
 }

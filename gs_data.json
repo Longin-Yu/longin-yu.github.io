@@ -7,14 +7,14 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 2919
+      "num_citations": 2966
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2196
+      "num_citations": 2216
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -28,14 +28,14 @@
       "bib": {
         "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning"
       },
-      "num_citations": 149
+      "num_citations": 151
     },
     "DnYC9yoAAAAJ:WF5omc3nYNoC": {
       "author_pub_id": "DnYC9yoAAAAJ:WF5omc3nYNoC",
       "bib": {
         "title": "Androidlab: Training and systematic benchmarking of android autonomous agents"
       },
-      "num_citations": 125
+      "num_citations": 126
     },
     "DnYC9yoAAAAJ:d1gkVwhDpl0C": {
       "author_pub_id": "DnYC9yoAAAAJ:d1gkVwhDpl0C",
@@ -49,7 +49,7 @@
       "bib": {
         "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity"
       },
-      "num_citations": 107
+      "num_citations": 111
     },
     "DnYC9yoAAAAJ:zYLM7Y9cAGgC": {
       "author_pub_id": "DnYC9yoAAAAJ:zYLM7Y9cAGgC",
@@ -63,7 +63,7 @@
       "bib": {
         "title": "Seed1. 8 model card: Towards generalized real-world agency"
       },
-      "num_citations": 65
+      "num_citations": 68
     },
     "DnYC9yoAAAAJ:roLk4NBRz8UC": {
       "author_pub_id": "DnYC9yoAAAAJ:roLk4NBRz8UC",
@@ -93,17 +93,17 @@
       },
       "num_citations": 16
     },
-    "DnYC9yoAAAAJ:9ZlFYXVOiuMC": {
-      "author_pub_id": "DnYC9yoAAAAJ:9ZlFYXVOiuMC",
-      "bib": {
-        "title": "Clawbench: Can ai agents complete everyday online tasks?"
-      },
-      "num_citations": 12
-    },
     "DnYC9yoAAAAJ:3fE2CSJIrl8C": {
       "author_pub_id": "DnYC9yoAAAAJ:3fE2CSJIrl8C",
       "bib": {
         "title": "Alphavae: Unified end-to-end rgba image reconstruction and generation with alpha-aware representation learning"
+      },
+      "num_citations": 13
+    },
+    "DnYC9yoAAAAJ:9ZlFYXVOiuMC": {
+      "author_pub_id": "DnYC9yoAAAAJ:9ZlFYXVOiuMC",
+      "bib": {
+        "title": "Clawbench: Can ai agents complete everyday online tasks?"
       },
       "num_citations": 12
     },
@@ -119,7 +119,7 @@
       "bib": {
         "title": "OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning"
       },
-      "num_citations": 8
+      "num_citations": 9
     },
     "DnYC9yoAAAAJ:hqOjcs7Dif8C": {
       "author_pub_id": "DnYC9yoAAAAJ:hqOjcs7Dif8C",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6093,
+  "citedby": 6172,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-10-27T14:32:50+00:00"
+  "updated": "2026-10-28T15:07:09+00:00"
 }

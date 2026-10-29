@@ -14,7 +14,7 @@
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2216
+      "num_citations": 2217
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6172,
+  "citedby": 6173,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-10-28T15:07:09+00:00"
+  "updated": "2026-10-29T15:14:38+00:00"
 }

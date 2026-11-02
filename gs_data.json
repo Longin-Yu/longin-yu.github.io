@@ -7,14 +7,14 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 2966
+      "num_citations": 2990
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2217
+      "num_citations": 2221
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -28,28 +28,28 @@
       "bib": {
         "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning"
       },
-      "num_citations": 151
+      "num_citations": 152
     },
     "DnYC9yoAAAAJ:WF5omc3nYNoC": {
       "author_pub_id": "DnYC9yoAAAAJ:WF5omc3nYNoC",
       "bib": {
         "title": "Androidlab: Training and systematic benchmarking of android autonomous agents"
       },
-      "num_citations": 126
-    },
-    "DnYC9yoAAAAJ:d1gkVwhDpl0C": {
-      "author_pub_id": "DnYC9yoAAAAJ:d1gkVwhDpl0C",
-      "bib": {
-        "title": "Autowebglm: A large language model-based web navigating agent"
-      },
-      "num_citations": 112
+      "num_citations": 127
     },
     "DnYC9yoAAAAJ:Wp0gIr-vW9MC": {
       "author_pub_id": "DnYC9yoAAAAJ:Wp0gIr-vW9MC",
       "bib": {
         "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity"
       },
-      "num_citations": 111
+      "num_citations": 114
+    },
+    "DnYC9yoAAAAJ:d1gkVwhDpl0C": {
+      "author_pub_id": "DnYC9yoAAAAJ:d1gkVwhDpl0C",
+      "bib": {
+        "title": "Autowebglm: A large language model-based web navigating agent"
+      },
+      "num_citations": 114
     },
     "DnYC9yoAAAAJ:zYLM7Y9cAGgC": {
       "author_pub_id": "DnYC9yoAAAAJ:zYLM7Y9cAGgC",
@@ -63,7 +63,7 @@
       "bib": {
         "title": "Seed1. 8 model card: Towards generalized real-world agency"
       },
-      "num_citations": 68
+      "num_citations": 69
     },
     "DnYC9yoAAAAJ:roLk4NBRz8UC": {
       "author_pub_id": "DnYC9yoAAAAJ:roLk4NBRz8UC",
@@ -91,7 +91,7 @@
       "bib": {
         "title": "Comrope: Scalable and robust rotary position embedding parameterized by trainable commuting angle matrices"
       },
-      "num_citations": 16
+      "num_citations": 17
     },
     "DnYC9yoAAAAJ:3fE2CSJIrl8C": {
       "author_pub_id": "DnYC9yoAAAAJ:3fE2CSJIrl8C",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6173,
+  "citedby": 6210,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-10-29T15:14:38+00:00"
+  "updated": "2026-11-02T18:23:48+00:00"
 }

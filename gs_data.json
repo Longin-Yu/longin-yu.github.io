@@ -7,21 +7,21 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 2990
+      "num_citations": 3014
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2221
+      "num_citations": 2227
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
       "bib": {
         "title": "WebGLM: towards an efficient web-enhanced question answering system with human preferences"
       },
-      "num_citations": 161
+      "num_citations": 162
     },
     "DnYC9yoAAAAJ:MXK_kJrjxJIC": {
       "author_pub_id": "DnYC9yoAAAAJ:MXK_kJrjxJIC",
@@ -35,7 +35,7 @@
       "bib": {
         "title": "Androidlab: Training and systematic benchmarking of android autonomous agents"
       },
-      "num_citations": 127
+      "num_citations": 128
     },
     "DnYC9yoAAAAJ:Wp0gIr-vW9MC": {
       "author_pub_id": "DnYC9yoAAAAJ:Wp0gIr-vW9MC",
@@ -70,7 +70,7 @@
       "bib": {
         "title": "VisualAgentBench: Towards Large Multimodal Models as Visual Agents"
       },
-      "num_citations": 50
+      "num_citations": 51
     },
     "DnYC9yoAAAAJ:IjCSPb-OGe4C": {
       "author_pub_id": "DnYC9yoAAAAJ:IjCSPb-OGe4C",
@@ -105,7 +105,7 @@
       "bib": {
         "title": "Clawbench: Can ai agents complete everyday online tasks?"
       },
-      "num_citations": 12
+      "num_citations": 11
     },
     "DnYC9yoAAAAJ:Zph67rFs4hoC": {
       "author_pub_id": "DnYC9yoAAAAJ:Zph67rFs4hoC",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6210,
+  "citedby": 6242,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-11-02T18:23:48+00:00"
+  "updated": "2026-11-03T16:15:59+00:00"
 }

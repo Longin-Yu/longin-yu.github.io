@@ -7,14 +7,14 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 3014
+      "num_citations": 3020
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2227
+      "num_citations": 2230
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -28,7 +28,7 @@
       "bib": {
         "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning"
       },
-      "num_citations": 152
+      "num_citations": 151
     },
     "DnYC9yoAAAAJ:WF5omc3nYNoC": {
       "author_pub_id": "DnYC9yoAAAAJ:WF5omc3nYNoC",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6242,
+  "citedby": 6250,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-11-03T16:15:59+00:00"
+  "updated": "2026-11-04T16:20:18+00:00"
 }

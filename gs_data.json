@@ -7,14 +7,14 @@
       "bib": {
         "title": "Agentbench: Evaluating llms as agents"
       },
-      "num_citations": 3020
+      "num_citations": 3055
     },
     "DnYC9yoAAAAJ:eQOLeE2rZwMC": {
       "author_pub_id": "DnYC9yoAAAAJ:eQOLeE2rZwMC",
       "bib": {
         "title": "Chatglm: A family of large language models from glm-130b to glm-4 all tools"
       },
-      "num_citations": 2230
+      "num_citations": 2240
     },
     "DnYC9yoAAAAJ:u5HHmVD_uO8C": {
       "author_pub_id": "DnYC9yoAAAAJ:u5HHmVD_uO8C",
@@ -28,21 +28,21 @@
       "bib": {
         "title": "Ui-tars-2 technical report: Advancing gui agent with multi-turn reinforcement learning"
       },
-      "num_citations": 151
+      "num_citations": 156
     },
     "DnYC9yoAAAAJ:WF5omc3nYNoC": {
       "author_pub_id": "DnYC9yoAAAAJ:WF5omc3nYNoC",
       "bib": {
         "title": "Androidlab: Training and systematic benchmarking of android autonomous agents"
       },
-      "num_citations": 128
+      "num_citations": 129
     },
     "DnYC9yoAAAAJ:Wp0gIr-vW9MC": {
       "author_pub_id": "DnYC9yoAAAAJ:Wp0gIr-vW9MC",
       "bib": {
         "title": "Seed2. 0 model card: Towards intelligence frontier for real-world complexity"
       },
-      "num_citations": 114
+      "num_citations": 116
     },
     "DnYC9yoAAAAJ:d1gkVwhDpl0C": {
       "author_pub_id": "DnYC9yoAAAAJ:d1gkVwhDpl0C",
@@ -63,7 +63,7 @@
       "bib": {
         "title": "Seed1. 8 model card: Towards generalized real-world agency"
       },
-      "num_citations": 69
+      "num_citations": 70
     },
     "DnYC9yoAAAAJ:roLk4NBRz8UC": {
       "author_pub_id": "DnYC9yoAAAAJ:roLk4NBRz8UC",
@@ -84,7 +84,7 @@
       "bib": {
         "title": "Editthinker: Unlocking iterative reasoning for any image editor"
       },
-      "num_citations": 25
+      "num_citations": 26
     },
     "DnYC9yoAAAAJ:0EnyYjriUFMC": {
       "author_pub_id": "DnYC9yoAAAAJ:0EnyYjriUFMC",
@@ -151,8 +151,8 @@
     }
   },
   "name": "Hao Yu",
-  "citedby": 6250,
+  "citedby": 6305,
   "hindex": 13,
   "i10index": 16,
-  "updated": "2026-11-04T16:20:18+00:00"
+  "updated": "2026-11-06T15:56:03+00:00"
 }
